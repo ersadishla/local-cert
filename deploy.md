@@ -88,6 +88,15 @@ sudo supervisorctl start queue:*
 ```
 
 ```
+sudo apt-get install redis-server
+composer install predis/predis
+REDIS_CLIENT=predis
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+```
+
+```
 upload_max_filesize=20M
 post_max_size=40M
 memory_limit=2048M
