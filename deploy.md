@@ -72,10 +72,12 @@ sudo nano /etc/supervisor/conf.d/queue.conf
 [program:queue]
 
 process_name=%(program_name)s_%(process_num)02d
-command=php /var/www/html/karir_petro/artisan queue:work --tries=3 --sleep=3
+command=php /var/www/html/karir_petro/artisan queue:work --timeout=180
 user=root
 autostart=true
 autorestart=true
+stopasgroup=true
+killasgroup=true
 numprocs=3
 redirect_stderr=true
 stdout_logfile=/var/www/html/karir_petro/storage/logs/queue.log
@@ -100,4 +102,6 @@ REDIS_PORT=6379
 upload_max_filesize=20M
 post_max_size=40M
 memory_limit=2048M
+max_execution_time=180
+
 ```
