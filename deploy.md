@@ -3,6 +3,7 @@
 ```bash
 https://blog.logrocket.com/setting-up-a-remote-postgres-database-server-on-ubuntu-18-04/
 https://www.hostinger.co.id/tutorial/install-laravel-di-ubuntu/
+https://tudip.com/blog-post/laravel-queue-and-running-it-with-supervisor/
 ```
 
 ```bash
@@ -64,6 +65,10 @@ sudo ufw allow 5432/tcp
 ```bash
 php artisan queue:work --tries=3 --timeout=300 >> storage/logs/jobs.log &
 
+sudo apt install supervisor
+service supervisor status
+sudo nano /etc/supervisor/conf.d/queue.conf
+
 [program:queue]
 
 process_name=%(program_name)s_%(process_num)02d
@@ -74,4 +79,10 @@ autorestart=true
 numprocs=3
 redirect_stderr=true
 stdout_logfile=/var/www/html/karir_petro/storage/logs/queue.log
+
+sudo supervisorctl reread
+
+sudo supervisorctl update
+
+sudo supervisorctl start queue:*
 ```
