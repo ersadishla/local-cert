@@ -86,3 +86,9 @@ sudo supervisorctl update
 
 sudo supervisorctl start queue:*
 ```
+
+```
+upload_max_filesize=20M
+post_max_size=40M
+memory_limit=2048MB
+```
