@@ -20,7 +20,7 @@ sudo systemctl restart apache2
 
 sudo apt-get update
 sudo apt-get install zip unzip
-sudo apt-get install libapache2-mod-php7.4 php7.4 php7.4-tokenizer php7.4-json php7.4-bcmath php7.4-zip php7.4-xmlrpc php7.4-xml php7.4-gd php7.4-opcache php7.4-mbstring
+sudo apt-get install libapache2-mod-php7.4 php7.4 php7.4-tokenizer php7.4-json php7.4-bcmath php7.4-zip php7.4-xmlrpc php7.4-xml php7.4-gd php7.4-opcache php7.4-mbstring php7.4-curl
 sudo apt-get install php7.4-pgsql
 sudo systemctl restart apache2
 sudo nano /var/www/html/test.php
