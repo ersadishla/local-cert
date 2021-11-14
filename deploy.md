@@ -103,5 +103,11 @@ upload_max_filesize=20M
 post_max_size=40M
 memory_limit=2048M
 max_execution_time=180
-
+```
+```
+1. import  v
+2. rollback
+3. handling pegawai double
+4. handling penilaian
+5. bulk download
 ```
